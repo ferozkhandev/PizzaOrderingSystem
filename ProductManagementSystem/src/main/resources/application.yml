@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: ProductManagementSystem
+  profiles:
+    active: ${SPRING_PROFILES_ACTIVE:dev}
+  datasource:
+    url:
+server:
+  port: ${APP_PORT:8080}
