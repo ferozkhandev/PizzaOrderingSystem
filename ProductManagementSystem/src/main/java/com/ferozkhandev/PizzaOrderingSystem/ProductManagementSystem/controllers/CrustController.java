@@ -29,7 +29,7 @@ public class CrustController {
 
     @PostMapping("/add")
     @ExceptionHandler
-    public ResponseEntity<String> addCrust(CrustDTO crustDTO) {
+    public ResponseEntity<String> addCrust(@RequestBody CrustDTO crustDTO) {
         if (crustService.addCrust(crustDTO)) {
             return ResponseEntity.ok("Crust added successfully");
         } else {
@@ -39,13 +39,13 @@ public class CrustController {
 
     @PutMapping("/update")
     @ExceptionHandler
-    public ResponseEntity<CrustDTO> updateCrust(CrustDTO crustDTO) {
+    public ResponseEntity<CrustDTO> updateCrust(@RequestBody CrustDTO crustDTO) {
         return ResponseEntity.ok(crustService.updateCrust(crustDTO));
     }
 
     @DeleteMapping("/delete")
     @ExceptionHandler
-    public ResponseEntity<String> deleteCrust(CrustDTO crustDTO) {
+    public ResponseEntity<String> deleteCrust(@RequestBody CrustDTO crustDTO) {
         if (crustService.deleteCrust(crustDTO.getId())) {
             return ResponseEntity.ok("Crust deleted successfully");
         } else {
