@@ -6,13 +6,13 @@ import java.util.List;
 
 public interface CrustService {
 
-    void addCrust(CrustDTO crust);
+    boolean addCrust(CrustDTO crust);
 
     List<CrustDTO> getAllCrust();
 
     CrustDTO getCrust(Long id);
 
-    void updateCrust(CrustDTO crust);
+    CrustDTO updateCrust(CrustDTO crust);
 
-    void deleteCrust(Long id);
+    boolean deleteCrust(Long id);
 }
